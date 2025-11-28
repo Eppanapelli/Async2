@@ -1,11 +1,9 @@
 const duration=4000;
-function timer(duration){
+function timer(duration,onComplete){
     console.log(`Timer started `);
-}
-function onComplete(callback){
+
     setTimeout(()=>{
-        console.log(`${duration}ms is finished`);
-        callback();
+        onComplete(`Timer of ${duration}ms finished`)
     },duration)
 }
-onComplete(timer);
+timer(5000,(msg)=>console.log(msg));
